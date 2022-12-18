@@ -9,7 +9,11 @@ View weather description, minimum temperature, and maximum temperature
 User-friendly interface
 
 ### How to use:
-Open the app and enter the location you want to search for in the search bar.
+Go to the website [here](https://arminh93.github.io/weather/) and enter the location you want to search for in the search bar.
 Press the search button.
 The app will display the current weather description, as well as the minimum and maximum temperature for that location.
 We hope you enjoy using Weather Search!
+
+## Future TODO's:
+* Make the site more modern looking
+* Get the forecast information 
