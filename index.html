@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css">
+
+</html>
+
+<body>
+    <form id="city-form">
+        <h2>Get Weather information for a specific location</h2>
+        <label for="city-input">Enter a city name</label>
+        <input type="text" id="city-input" placeholder=" ">
+        <button type="submit" id="search-button">Search</button>
+        <div id="weather-container">
+            <h2 id="city-name"></h2>
+            <h3 id="country"></h3>
+            <div id="weather-description">Loading weather information...</div>
+            <div id="temperature-min">Loading Min. temperature...</div>
+            <div id="temperature-max">Loading Max. temperature...</div>
+        </div>
+        <script type="text/javascript" src="config.js"></script>
+        <script src="app.js"></script>
+</body>
+
+</html>
