@@ -1,6 +1,6 @@
 // OpenWeatherMap API Key
-var key = config.api_key;
-
+// var key = config.api_key;
+const api_key = 'f66b17fb8259679d32bb875ac3aff1bf';
 
 const form = document.getElementById('city-form'); // Form Element from HTML
 form.addEventListener('submit', event => {
@@ -13,7 +13,7 @@ form.addEventListener('submit', event => {
 
 //Make an API Call to OpenWeatherMap for the current weather
 function getWeather(city) {
-    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${config.api_key}&units=metric`)
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${api_key}&units=metric`)
         .then(response => response.json())
         .then(data => {
             document.getElementById("city-name").innerHTML = data.name; // City Name
@@ -23,8 +23,6 @@ function getWeather(city) {
             document.getElementById("temperature-max").innerHTML = `The maximum temperature is: ${data.main.temp_max} °C`; // Temperature Max
         });
 }
-
-
 
 // Default City
 //getWeather('Luzern');
