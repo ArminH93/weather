@@ -6,7 +6,7 @@ form.addEventListener('submit', event => {
     event.preventDefault(); // Prevent Default Form Submission
     const city = document.getElementById('city-input').value; // City Input Value
     getWeather(city); // Get Weather for City
-    //TODO: getForecast(city); // Get Forecast for City
+   // getForecast(city); // Get Forecast for City
 });
 
 
@@ -26,3 +26,13 @@ function getWeather(city) {
 // Default City
 //getWeather('Luzern');
 
+//Make an API Call to OpenWeatherMap for the forecast
+// function getForecast(city) {
+//     fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${config.api_key}&units=metric`)
+//         .then(response => response.json())
+//         .then(data => {
+//             console.log(data.weather.main); // BUG: data.weather is undefined
+//         });
+// }
+
+// getForecast('Luzern');
