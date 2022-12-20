@@ -1,6 +1,5 @@
 // OpenWeatherMap API Key
-// var key = api_key;
-const api_key = 'f66b17fb8259679d32bb875ac3aff1bf';
+ var key = config.api_key;
 
 // const form = document.getElementById('city-form'); // Form Element from HTML
 // form.addEventListener('submit', event => {
@@ -13,7 +12,7 @@ const api_key = 'f66b17fb8259679d32bb875ac3aff1bf';
 
 //Make an API Call to OpenWeatherMap for the current weather
 // function getWeather(city) {
-//     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${api_key}&units=metric`)
+//     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${config.api_key}&units=metric`)
 //         .then(response => response.json())
 //         .then(data => {
 //             // Log data to the console
@@ -31,7 +30,7 @@ const api_key = 'f66b17fb8259679d32bb875ac3aff1bf';
 
 //Make an API Call to OpenWeatherMap for the forecast - Every 3 hours for 5 days
 function getForecast(city) {
-    fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${api_key}&units=metric`)
+    fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${config.api_key}&units=metric`)
         .then(response => response.json())
         .then(data => {
             // list is an array of 40 objects, each object is a forecast for 3 hours
