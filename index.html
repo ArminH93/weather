@@ -11,16 +11,24 @@
 
 <body>
     <form id="city-form">
-        <h2>Get Weather information for a specific location</h2>
+        <h2>Get the 5-Day Forecast Weather for your location </h2>
         <label for="city-input">Enter a city name</label>
         <input type="text" id="city-input" placeholder=" ">
         <button type="submit" id="search-button">Search</button>
         <div id="weather-container">
-            <h2 id="city-name"></h2>
-            <h3 id="country"></h3>
-            <div id="weather-description">Loading weather information...</div>
-            <div id="temperature-min">Loading Min. temperature...</div>
-            <div id="temperature-max">Loading Max. temperature...</div>
+            <table id="forecast-table">
+                <thead>
+                    <tr>
+                        <th>Day</th>
+                        <th>Min. Temperature</th>
+                        <th>Max. Temperature</th>
+                        <th>Weather</th>
+                        <th>Rain Probability in %</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
         </div>
         <script type="text/javascript" src="config.js"></script>
         <script src="app.js"></script>
