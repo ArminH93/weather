@@ -5,33 +5,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather App</title>
-    <link rel="stylesheet" href="style.css">
+    <!-- <link href="output.css" rel="stylesheet"> -->
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+</head>
 
-</html>
+<body class="bg-gray-100 font-sans leading-normal text-gray-800">
+    <form id="city-form" class="mx-auto w-1/2 mt-10 p-4 bg-white rounded-lg shadow-lg">
+        <h2 class="text-2xl font-bold mb-4 text-center">Get the 5-Day Forecast Weather for your location</h2>
+        <label for="city-input" class="block font-bold mb-2">Enter a city name</label>
+        <input type="text" id="city-input" placeholder=" "
+            class="border p-2 w-3\/4 rounded-lg focus:outline-none focus:shadow-outline-blue">
 
-<body>
-    <form id="city-form">
-        <h2>Get the 5-Day Forecast Weather for your location </h2>
-        <label for="city-input">Enter a city name</label>
-        <input type="text" id="city-input" placeholder=" ">
-        <button type="submit" id="search-button">Search</button>
-        <div id="weather-container">
-            <table id="forecast-table">
+        <button type="submit" id="search-button"
+            class="px-4 py-2 mt-4 bg-blue-500 text-white rounded-full hover:bg-blue-600 focus:outline-none focus:shadow-outline-blue">Search</button>
+        <div id="weather-container" class="mt-8">
+            <table id="forecast-table" class="max-w-full text-center">
                 <thead>
-                    <tr>
-                        <th>Day</th>
-                        <th>Min. Temperature</th>
-                        <th>Max. Temperature</th>
-                        <th>Weather</th>
-                        <th>Rain Probability in %</th>
+
+                    <tr class="bg-gray-100 text-gray-800 hover:bg-gray-200 border-b-2">
+                        <th class="p-4 font-bold text-lg">Day</th>
+                        <th class="p-4">Min. Temperature</th>
+                        <th class="p-4">Max. Temperature</th>
+                        <th class="p-4">Weather</th>
+                        <th class="p-4">Rain Probability</th>
+                    </tr>
+                    <tr class="bg-gray-100 text-gray-800 hover:bg-gray-200 border-b-2">
+                        <!-- Add more rows here -->
                     </tr>
                 </thead>
                 <tbody>
                 </tbody>
             </table>
         </div>
-        <script type="text/javascript" src="config.js"></script>
-        <script src="app.js"></script>
+    </form>
+    <script type="text/javascript" src="config.js"></script>
+    <script src="app.js"></script>
 </body>
 
 </html>

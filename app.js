@@ -14,21 +14,15 @@ function getForecast(city) {
         .then(response => response.json())
         .then(data => {
 
-            /*  
-                CONSOLE OUTPUT FOR TESTING PURPOSES - Get the temperature for the first forecast in Lucerne as well as the population of the city
-                console.log(`At ${data.list[1].dt_txt} the temperature will be: ${data.list[0].main.temp} °C`); // Temperature for the weather in 3 hours in Lucerne
-                console.log(`The population of Lucerne, CH is: ${data.city.population}.`); // Population of the city 
-            */
-
             // For loop to iterate through the forecast data and extract the data for each day (every 3 hours)
             for (let i = 0; i < data.list.length; i++) {
                 const forecast = data.list[i];
+
                 const date = forecast.dt_txt; // Date and time of the forecast
                 const minTemp = forecast.main.temp_min; // Minimum temperature 
                 const maxTemp = forecast.main.temp_max; // Maximum temperature
                 const weather = forecast.weather[0].description; // Weather description 
                 let rainVolume = forecast.rain ? forecast.rain["3h"] : 0; // If there is no rain, the rain volume is 0
-
 
                 const forecastDuration = 3 * 60 * 60 * 1000; // 3 hours in milliseconds
                 const probability = rainVolume / (forecastDuration / 1000 / 60 / 60) * 100; // Calculate the probability of rain in %
@@ -44,10 +38,9 @@ function getForecast(city) {
                 // Create a new row in the table for each forecast
                 const row = document.createElement("tr");
 
-                /* 
-                    Create a new cell for each data point. 
-                    The data points are: date, minimum temperature, maximum temperature, weather descript.ion, probability of rain
-                */
+
+                // Create a new cell for each data point. 
+                // The data points are: date, minimum temperature, maximum temperature, weather descript.ion, probability of rain
                 const dateCell = document.createElement("td");
                 dateCell.textContent = date;
                 row.appendChild(dateCell);
@@ -79,3 +72,5 @@ function getForecast(city) {
     CONSOLE OUTPUT FOR TESTING PURPOSES
     getForecast('Luzern');
 */
+
+
