@@ -18,10 +18,11 @@ function getForecast(city) {
             for (let i = 0; i < data.list.length; i++) {
                 const forecast = data.list[i];
 
-                const date = forecast.dt_txt; // Date and time of the forecast
+                let date = forecast.dt_txt; // Date and time of the forecast
                 const minTemp = forecast.main.temp_min; // Minimum temperature 
                 const maxTemp = forecast.main.temp_max; // Maximum temperature
                 const weather = forecast.weather[0].description; // Weather description 
+                const icon = forecast.weather[0].icon; // Weather icon
                 let rainVolume = forecast.rain ? forecast.rain["3h"] : 0; // If there is no rain, the rain volume is 0
 
                 const forecastDuration = 3 * 60 * 60 * 1000; // 3 hours in milliseconds
@@ -38,11 +39,12 @@ function getForecast(city) {
                 // Create a new row in the table for each forecast
                 const row = document.createElement("tr");
 
-
                 // Create a new cell for each data point. 
-                // The data points are: date, minimum temperature, maximum temperature, weather descript.ion, probability of rain
+                // The data points are: date, min. temperature, max. temperature, description, rain in % and the weather icon
                 const dateCell = document.createElement("td");
+                date = date.replace(/(\d{4})-(\d{2})-(\d{2}) (\d{2}):(\d{2}):(\d{2})/, "$3.$2.$1 ($4:$5)"); // dd.mm.yyyy (hh:mm) Format
                 dateCell.textContent = date;
+                dateCell.style.paddingBottom = "20px";
                 row.appendChild(dateCell);
 
                 const minTempCell = document.createElement("td");
@@ -61,6 +63,11 @@ function getForecast(city) {
                 rainCell.textContent = `${roundedProbability}%`;
                 row.appendChild(rainCell);
 
+                const iconCell = document.createElement("td");
+                iconCell.innerHTML = `<img src="http://openweathermap.org/img/w/${icon}.png" alt="Weather Icon">`;
+                iconCell.style.paddingLeft = "30px";
+                row.appendChild(iconCell);
+
                 // Add the new row to the table body
                 document.querySelector("#forecast-table tbody").appendChild(row);
             }
@@ -73,4 +80,10 @@ function getForecast(city) {
     getForecast('Luzern');
 */
 
+/*  
+    CONSOLE OUTPUT FOR TESTING PURPOSES - Get the temperature for the first forecast in Lucerne as well as the population of the city
+    console.log(`At ${data.list[1].dt_txt} the temperature will be: ${data.list[0].main.temp} °C`);
+    console.log(`The population of Lucerne, CH is: ${data.city.population}.`);
+    console.log(`At ${data.list[1].dt_txt} the temperature will be: ${data.list[0].main.temp} °C`); 
 
+*/
