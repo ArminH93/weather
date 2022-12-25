@@ -9,7 +9,6 @@ View weather description, minimum temperature, and maximum temperature
 User-friendly interface
 
 
-## Future TODO's:
-* Currently limited due to API Key usage (You would have to use your own OpenWeatherMap API Key)
-* Make the site more modern looking
-* Get the forecast information 
+## TODO's:
+* Make the site more modern looking :white_check_mark:
+* Get the forecast information :white_check_mark:
