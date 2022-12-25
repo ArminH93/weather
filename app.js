@@ -70,6 +70,12 @@ function getForecast(city) {
 
                 // Add the new row to the table body
                 document.querySelector("#forecast-table tbody").appendChild(row);
+
+                // Delete table when new city is searched
+                if (i === 0) {
+                    document.querySelector("#forecast-table tbody").innerHTML = "";
+                }
+
             }
 
         });
@@ -85,5 +91,4 @@ function getForecast(city) {
     console.log(`At ${data.list[1].dt_txt} the temperature will be: ${data.list[0].main.temp} °C`);
     console.log(`The population of Lucerne, CH is: ${data.city.population}.`);
     console.log(`At ${data.list[1].dt_txt} the temperature will be: ${data.list[0].main.temp} °C`); 
-
 */
