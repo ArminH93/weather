@@ -12,3 +12,4 @@ User-friendly interface
 ## TODO's:
 * Make the site more modern looking :white_check_mark:
 * Get the forecast information :white_check_mark:
+* Limitation due to API usage (You need your own API Key from OpenWeatherMap)

@@ -1,5 +1,6 @@
 // OpenWeatherMap API Key
-var api_key = config.api_key;
+// var api_key = config.api_key;
+const api_key = 'f66b17fb8259679d32bb875ac3aff1bf';
 
 const form = document.getElementById('city-form'); // Form Element from HTML
 form.addEventListener('submit', event => {
@@ -10,7 +11,7 @@ form.addEventListener('submit', event => {
 
 //Make an API Call to OpenWeatherMap for the forecast - Every 3 hours for 5 days
 function getForecast(city) {
-    fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${config.api_key}&units=metric`)
+    fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${api_key}&units=metric`)
         .then(response => response.json())
         .then(data => {
 
